@@ -38,6 +38,9 @@ void slideshow(void);
 void set_timeout(timeout_f, int, bool);
 void reset_timeout(timeout_f);
 
+// Kanon added
+bool ci_fit_to_win(arg_t sm);
+
 extern appmode_t mode;
 extern img_t img;
 extern tns_t tns;
@@ -289,6 +292,8 @@ bool ci_navigate(arg_t n)
 
 	if (n != fileidx) {
 		load_image(n);
+		// Kanon added
+		ci_fit_to_win(SCALE_DOWN);
 		return true;
 	} else {
 		return false;

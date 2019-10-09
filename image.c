@@ -393,10 +393,21 @@ void img_check_pan(img_t *img, bool moved)
 
 bool img_fit(img_t *img)
 {
-	float z, zw, zh;
+	float z, zmax, zw, zh;
 
 	if (img->scalemode == SCALE_ZOOM)
 		return false;
+
+	zmax = img->scalemode == SCALE_DOWN ? 1.0 : zoom_max;
+
+	// Kanon added: If too small, make bigger
+	if (img->scalemode == SCALE_DOWN) {
+		if (img->w <= 600) {
+			zmax = 1.5;
+		} else if (img->h <=400) {
+			zmax = 1.5;
+		}
+	}
 
 	zw = (float) img->win->w / (float) img->w;
 	zh = (float) img->win->h / (float) img->h;
@@ -412,7 +423,8 @@ bool img_fit(img_t *img)
 			z = MIN(zw, zh);
 			break;
 	}
-	z = MIN(z, img->scalemode == SCALE_DOWN ? 1.0 : zoom_max);
+
+	z = MIN(z, zmax);
 
 	if (zoomdiff(img, z) != 0) {
 		img->zoom = z;
