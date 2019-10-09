@@ -38,6 +38,9 @@ void slideshow(void);
 void set_timeout(timeout_f, int, bool);
 void reset_timeout(timeout_f);
 
+// Kanon added
+void run_key_handler(const char *key, unsigned int mask);
+
 extern appmode_t mode;
 extern img_t img;
 extern tns_t tns;
