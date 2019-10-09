@@ -40,6 +40,7 @@ void reset_timeout(timeout_f);
 
 // Kanon added
 bool ci_fit_to_win(arg_t sm);
+void run_key_handler(const char *key, unsigned int mask);
 
 extern appmode_t mode;
 extern img_t img;

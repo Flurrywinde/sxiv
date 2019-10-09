@@ -18,8 +18,9 @@ enum {
  * (first/last value is used as min/max zoom level)
  */
 static const float zoom_levels[] = {
-	 12.5,  25.0,  50.0,  75.0,
-	100.0, 150.0, 200.0, 400.0, 800.0
+	 11.1,  20.0,  30.0,  40.0,  50.0,  65.0,  80.0,  90.0,
+	100.0, 125.0,  150.0, 175.0, 200.0, 300.0, 400.0, 500.0,
+	600.0, 700.0,  800.0, 900.0, 1000.0, 1111.1
 };
 
 /* default slideshow delay (in sec, overwritten via -S option): */
@@ -67,7 +68,8 @@ static const keymap_t keys[] = {
 	{ 0,            XK_g,             g_first,              None },
 	{ 0,            XK_G,             g_n_or_last,          None },
 	{ 0,            XK_r,             g_reload_image,       None },
-	{ 0,            XK_D,             g_remove_image,       None },
+	{ 0,            XK_d,             g_remove_image,       0 },   // Kanon mod: gave it a parm
+	{ 0,            XK_D,             g_remove_image,       1 },   // See commands.c
 	{ ControlMask,  XK_h,             g_scroll_screen,      DIR_LEFT },
 	{ ControlMask,  XK_Left,          g_scroll_screen,      DIR_LEFT },
 	{ ControlMask,  XK_j,             g_scroll_screen,      DIR_DOWN },
@@ -142,9 +144,15 @@ static const keymap_t keys[] = {
 /* mouse button mappings for image mode: */
 static const button_t buttons[] = {
 	/* modifiers    button            function              argument */
-	{ 0,            1,                i_cursor_navigate,    None },
+	{ 0,            1,                i_navigate,           +1 },   // Used to be i_cursor_navigate
+	{ 0,            3,                i_navigate,           -1 },   // Used to be g_switch_mode.
 	{ 0,            2,                i_drag,               DRAG_ABSOLUTE },
-	{ 0,            3,                g_switch_mode,        None },
+	{ ControlMask,  4,                i_scroll,             DIR_UP },
+	{ ControlMask,  5,                i_scroll,             DIR_DOWN },
+	{ ShiftMask,    4,                i_scroll,             DIR_LEFT },
+	{ ShiftMask,    5,                i_scroll,             DIR_RIGHT },
+	{ 0,            6,                i_scroll,             DIR_LEFT },
+	{ 0,            7,                i_scroll,             DIR_RIGHT },
 	{ 0,            4,                g_zoom,               +1 },
 	{ 0,            5,                g_zoom,               -1 },
 };
