@@ -132,8 +132,15 @@ bool cg_reload_image(arg_t _)
 	return true;
 }
 
-bool cg_remove_image(arg_t _)
+// Seems original programmer uses _ to mean parm not used. I changed it to banish.
+// In thumbnail mode, still removes current image, not marked ones
+bool cg_remove_image(arg_t banish)
 {
+	if (banish) {
+		// printf("banish\n");
+		run_key_handler("d", 4);   // 4 means ctrl. Ugly hack. Better way: have keyhandler able to remove images from the list. Removes image from external database.
+	}
+
 	remove_file(fileidx, true);
 	if (mode == MODE_IMAGE)
 		load_image(fileidx);
