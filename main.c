@@ -577,7 +577,6 @@ void on_keypress(XKeyEvent *kev)
 	bool dirty = false;
 
 	XLookupString(kev, &key, 1, &ksym, NULL);
-
 	if (kev->state & ShiftMask) {
 		kev->state &= ~ShiftMask;
 		XLookupString(kev, &dummy, 1, &shksym, NULL);
@@ -605,6 +604,7 @@ void on_keypress(XKeyEvent *kev)
 			if (cmds[keys[i].cmd].func(keys[i].arg))
 				dirty = true;
 			bound = true;
+			// printf("Bound: %d-%s", kev->state & ~sh, XKeysymToString(ksym));
 		}
 	}
 	if (!bound)
