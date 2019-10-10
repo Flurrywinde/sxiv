@@ -16,6 +16,10 @@ Sxiv is my favorite image viewer (Thank you, muennich!), but I needed a few mods
 * Made the mouse act like it used to (mostly because I like right-click to go to the previous image again)
 * Make ctrl-m unmark_all again (because I want to use ctrl-u for something else)
 
+**Notes:**
+
+1. The key-handler is responsible for recognizing a symlink and calling realpath if necessary.
+
 Original Readme
 ---------------
 
