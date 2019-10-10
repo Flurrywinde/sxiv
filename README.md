@@ -7,12 +7,14 @@ Flurrywinde's Modded SXIV
 
 Sxiv is my favorite image viewer (Thank you, muennich!), but I needed a few mods to suit my use-cases:
 
-* Small images default to 1.5x zoom for better viewing
-* The bar color is customizable again
+* The bar color is customizable again (but other colors are still set in .Xresources)
+* Makefile edit to use latest giflib (because some gifs don't work with some versions of giflib)
+* Send all unbound keys to the key-handler, not just after ctrl-x
 * Removing an image from the image list can optionally generate an external key-handler event
+* Small images default to 1.5x zoom for better viewing
 * Add a few more zoom levels for bigger and finer zooming
 * Made the mouse act like it used to (mostly because I like right-click to go to the previous image again)
-* Send all unbound keys to the key-handler, not just after ctrl-x
+* Make ctrl-m unmark_all again (because I want to use ctrl-u for something else)
 
 Original Readme
 ---------------
