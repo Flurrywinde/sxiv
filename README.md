@@ -1,6 +1,9 @@
 ![sxiv](http://muennich.github.com/sxiv/img/logo.png "sxiv")
 
-** Flurrywinde's Modded SXIV **
+**Simple X Image Viewer**
+
+Flurrywinde's Modded SXIV
+-------------------------
 
 Sxiv is my favorite image viewer (Thank you, muennich!), but I needed a few mods to suit my use-cases:
 
@@ -10,8 +13,6 @@ Sxiv is my favorite image viewer (Thank you, muennich!), but I needed a few mods
 * Add a few more zoom levels for bigger and finer zooming
 * Made the mouse act like it used to (mostly because I like right-click to go to the previous image again)
 * Send all unbound keys to the key-handler, not just after ctrl-x
-
-**Simple X Image Viewer**
 
 The sole purpose of sxiv is to be the perfect image viewer for me. It is free
 software so that you can use it and modify it for your needs. Please file a bug
