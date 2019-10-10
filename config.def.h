@@ -11,6 +11,10 @@ enum {
  * See X(7) section Resources and xrdb(1) for more information.
  */
 
+// Kanon needs his bar color
+static const char * const BAR_BG_COLOR = "#222222";
+static const char * const BAR_FG_COLOR = "#EEEEEE";
+
 #endif
 #ifdef _IMAGE_CONFIG
 

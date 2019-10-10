@@ -604,7 +604,7 @@ void on_keypress(XKeyEvent *kev)
 			if (cmds[keys[i].cmd].func(keys[i].arg))
 				dirty = true;
 			bound = true;
-			// printf("Bound: %d-%s", kev->state & ~sh, XKeysymToString(ksym));
+			// printf("Bound: %d-%s\n", kev->state & ~sh, XKeysymToString(ksym));
 		}
 	}
 	if (!bound)
