@@ -20,6 +20,15 @@ Sxiv is my favorite image viewer (Thank you, muennich!), but I needed a few mods
 
 1. The key-handler is responsible for recognizing a symlink and calling realpath if necessary.
 
+2. Foreground color, background color, and font are now set in .Xresources (at least on my system, Ubuntu 18.04). I added:
+```
+Sxiv.foreground: lightgray
+Sxiv.background: #000000
+```
+to the end because I prefer a black background.
+
+To update, run:	`xrdb -load .Xresources` after making your changes.
+
 Original Readme
 ---------------
 
